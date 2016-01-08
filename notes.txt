@@ -1,0 +1,112 @@
+Syntax
+Semantics vs Syntax
+Semantics vs Implementation
+Interpreted Language
+Parsing & Execution
+Parsing
+Easy to Read Numbers
+Shorthand Syntax
+Faking Special Syntax
+Instance/Class Variable Access
+Message Passing
+Creating Objects
+Assignment Methods
+Creating Classes
+Creating Methods
+Generating Methods
+Method Visibility
+Bare Calls
+Local Variables
+Self
+Small Language
+Elegance
+
+
+
+
+investigate:
+
+
+
+
+
+# Struct
+
+```ruby
+Car = Struct.new(:make, :model, :year) do
+  def to_s
+    "#{year} #{make} #{model}"
+  end
+end
+
+civic = Car.new('Honda', 'Civic', '2013')
+civic.to_s # => "2013 Honda Civic"
+```
+
+^
+- Struct.new returns a class, just like Class.new
+- start with attrs
+
+---
+
+# A Better Class Making Machine
+
+```ruby
+BttrStruct ||= Class.new
+metaclass = class << BttrStruct; self; end
+
+metaclass.class_eval do
+  define_method :new do |*attrs|
+    new_klass = Class.new
+    new_klass.class_eval do
+      instance_variable_set(:@attr_names, attrs)
+      attrs.each do |attr|
+        bttr_reader attr
+      end
+      define_method :initialize do |*args|
+        class_variable_get(:@attr_names).zip(args).each do |k,v|
+          k = v
+        end
+      end
+    end
+    new_klass
+  end
+end
+```
+
+---
+
+# A Better Class Making Machine
+
+```ruby
+BttrCar = BttrStruct.new(:make, :model, :year) do
+  def to_s
+    "#{year} #{make} #{model}"
+  end
+end
+```
+
+---
+
+
+
+class TodoList
+  def initialize
+    @todos = []
+  end
+
+  def <<(todo)
+    @todos << todo
+  end
+
+  def to_s
+    unfinished_tasks.join("\n")
+  end
+
+  private
+
+  def unfinished_tasks
+    @todos.reject(&:completed?)
+  end
+end
+

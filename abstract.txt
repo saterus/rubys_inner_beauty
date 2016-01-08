@@ -1,0 +1,21 @@
+Ruby's Inner Beauty
+
+Ruby is a expressive, terse, flexible language that cites "programmer happiness" as its chief design goal. It must be the beautiful syntax that leads to that happiness, right?
+
+In this talk we will disect the difference between syntax and semantics, slowly peeling away the layers of Ruby's syntactic sugar. What concepts lie at the hidden core of our favorite language? Underneath it all, we will find the ideas that truly make Ruby beautiful.
+
+
+I presented this talk at the Columbus Ruby Brigade to more than 60 attendees in May. We start by revealing some of the simple syntax tricks that make programming in Ruby just a bit nicer. We reveal more and more of what we think of as "Ruby" to just be these syntax shortcuts. Eventually we are left with only a few concepts that truly make up the language.
+
+If I had to be honest, I think this was the best presentation I've given to date. A really fun talk to give.
+
+Selected mentions:
+https://twitter.com/ekristines/status/600637573158043648
+https://twitter.com/Nikon_Shooter/status/600639780699959297
+https://twitter.com/rrickardjr/status/600647533971509248
+https://twitter.com/modifiedmove/status/600658376570306560
+https://twitter.com/bryanschoeff/status/600447236338806785
+https://twitter.com/joncanady/status/600434884620980224
+https://twitter.com/Somji_/status/600483823403565056
+https://twitter.com/tempogenic/status/600485151408197632
+
